@@ -19,14 +19,14 @@ gulp.task('imageCopy', () => {
   gulp.src('src/css/*')
     .pipe(cssMinify())
     .pipe(gulp.dest('dist/css'));
-});
+});*/
 
 gulp.task('jsMinify', () => {
-  gulp.src('src/*.js')
+  gulp.src('src/js/*.js')
     .pipe(jsMinify())
-    .pipe(gulp.dest('dist/'));
-});*/
+    .pipe(gulp.dest('dist/js'));
+});
 
 gulp.task('serve', serve('dist'));
 
-gulp.task('default', ['htmlMinify', 'imageCopy', 'serve']);
+gulp.task('default', ['htmlMinify', 'jsMinify', 'imageCopy', 'serve']);
